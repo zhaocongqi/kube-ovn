@@ -8,6 +8,7 @@
   ],
   "baseBranches": ["master", "release-1.13"],
   "postUpdateOptions": ["gomodTidy"],
+  "labels": ["dependencies"],
   "packageRules": [
     {
       "matchBaseBranches": ["master"],
@@ -26,11 +27,7 @@
         "github.com/kubernetes/**",
         "kubernetes/**"
       ],
-      "matchUpdateTypes": [
-        "major",
-        "minor"
-      ],
-      "enabled": false
+      "groupName": "kubernetes"
     },
     {
       "matchUpdateTypes": [
@@ -40,7 +37,8 @@
     },
     {
       "matchPackageNames": [
-        "github.com/kubeovn/**"
+        "github.com/kubeovn/**",
+        "windows"
       ],
       "enabled": false
     },
