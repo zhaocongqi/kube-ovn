@@ -1136,7 +1136,7 @@ func (c *Controller) handleAddVpcExternalSubnet(key, subnet string) error {
 	var v4ip, v6ip, mac string
 	klog.V(3).Infof("create vpc lrp eip %s", lrpEipName)
 	if needCreateEip {
-		if v4ip, v6ip, mac, err = c.acquireIPAddress(subnet, lrpEipName, lrpEipName); err != nil {
+		if v4ip, v6ip, mac, err = c.acquireIPAddress(subnet, lrpEipName, lrpEipName, nil); err != nil {
 			klog.Errorf("failed to acquire ip address for lrp eip %s, %v", lrpEipName, err)
 			return err
 		}

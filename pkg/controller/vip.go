@@ -243,7 +243,7 @@ func (c *Controller) handleAddVirtualIP(key string) error {
 		v4ip, v6ip, mac, err = c.acquireStaticIPAddress(subnet.Name, vip.Name, portName, ipStr, macPointer)
 	} else {
 		// Random allocate
-		v4ip, v6ip, mac, err = c.acquireIPAddress(subnet.Name, vip.Name, portName)
+		v4ip, v6ip, mac, err = c.acquireIPAddress(subnet.Name, vip.Name, portName, nil)
 	}
 	if err != nil {
 		klog.Error(err)

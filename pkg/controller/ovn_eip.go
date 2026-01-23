@@ -243,7 +243,7 @@ func (c *Controller) handleAddOvnEip(key string) error {
 		v4ip, v6ip, mac, err = c.acquireStaticIPAddress(subnet.Name, cachedEip.Name, portName, cachedEip.Spec.V4Ip, nil)
 	} else {
 		// random allocate
-		v4ip, v6ip, mac, err = c.acquireIPAddress(subnet.Name, cachedEip.Name, portName)
+		v4ip, v6ip, mac, err = c.acquireIPAddress(subnet.Name, cachedEip.Name, portName, nil)
 	}
 	if err != nil {
 		klog.Errorf("failed to acquire ip address, %v", err)
